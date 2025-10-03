@@ -2,22 +2,25 @@ import React from 'react';
 import './App.css';
 
 function App() {
+  const[todos,setTodos] = useState<Todo[]>([]);
+
+  
+  //型を設定。例えば文字列型以外が入らないようにしている
+  type Todo = {
+    inputValue:string;
+    id:number;
+    checked:boolean;
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-      
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div>
+           <h2>Todoリスト By吉河 秀峰</h2>
+           <form onSubmit={() => {}}>
+            <input type ="text" onChange ={() => {}} className='inputText'/>
+            <input type ="submit" value ="作成" className='submitButton'/>
+           </form>
+        </div>
     </div>
   );
 }
